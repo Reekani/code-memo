@@ -1,14 +1,15 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {RouterModule, Routes} from "@angular/router";
-import {LoginComponent} from "./login-module/login/login.component";
-import {LoginModule} from "./login-module/login.module";
+import {ProjectsListModule} from "./projects-list/projects-list.module";
 
 
 const appRoutes: Routes = [
-  {path: '', component: LoginComponent}
+  {path: '', component: AppComponent}
 ];
 
 @NgModule({
@@ -17,10 +18,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    LoginModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    ProjectsListModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
