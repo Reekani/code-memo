@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+.mat-column-owner {
+  width: 25%;
+}
+.mat-column-projectName {
+  width: 25%;
+}
+.mat-column-description {
+  width: 25%;
+}

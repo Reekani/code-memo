@@ -12,7 +12,7 @@ export class ProjectsListComponent implements OnInit {
   @ViewChild(MatTable) projectsListTable: MatTable<any>;
 
   myDataArray = new MatTableDataSource<any>([]);
-  columnsToDisplay = ['projectName', 'owner', 'upvote'];
+  columnsToDisplay = ['projectName', 'owner', 'description'];
 
 
   constructor(private projectsListService: ProjectListService) { }
@@ -28,18 +28,3 @@ export class ProjectsListComponent implements OnInit {
 
 }
 
-export interface ProjectElement {
-  position: number;
-  name: string;
-}
-
-const PROJECTS_DATA = [
-  {position: 1, name: 'firstProject'},
-  {position: 1, name: 'firstProject'},
-  {position: 1, name: 'firstProject'},
-  {position: 1, name: 'firstProject'},
-  {position: 1, name: 'firstProject'},
-  {position: 1, name: 'firstProject'},
-  {position: 1, name: 'firstProject'},
-  {position: 1, name: 'firstProject'},
-  ];
