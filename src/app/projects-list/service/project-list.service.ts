@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 export class ProjectListService {
 
   public getUserRepos(user: string): Observable<any> {
-    return this.http.get('https://api.github.com/users/Reekani/repos');
+    return this.http.get('https://api.github.com/users/angular/repos');
   }
 
   constructor(private http: HttpClient) { }

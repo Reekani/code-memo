@@ -8,21 +8,25 @@ import {ProjectListService} from "../service/project-list.service";
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit {
-
-  @ViewChild(MatTable) projectsListTable: MatTable<any>;
-
-  myDataArray = new MatTableDataSource<any>([]);
-  columnsToDisplay = ['projectName', 'owner', 'description'];
-
+  projectsList = null;
+  selectedProject = null;
 
   constructor(private projectsListService: ProjectListService) { }
+
+  selectProject(id: number) {
+    this.selectedProject = id;
+  }
+
+  viewOnGithub(url: string) {
+    window.open(url);
+    this.selectedProject = null;
+  }
 
   ngOnInit() {
     this.projectsListService.getUserRepos('Reekani')
       .subscribe(projectsListJson => {
-        console.log('projectsListJson', projectsListJson);
-        this.myDataArray = projectsListJson;
-        this.projectsListTable.renderRows();
+        this.projectsList = projectsListJson;
+        console.log('this.projectsList', this.projectsList);
       })
   }
 

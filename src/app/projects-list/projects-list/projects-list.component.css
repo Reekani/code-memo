@@ -1,12 +1,17 @@
-table {
-  width: 100%;
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
 }
-.mat-column-owner {
-  width: 25%;
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
 }
-.mat-column-projectName {
-  width: 25%;
+
+.mat-action-row {
+  padding-right: 32px !important;
 }
-.mat-column-description {
-  width: 25%;
+
+.no-description {
+  font-style: italic;
 }
