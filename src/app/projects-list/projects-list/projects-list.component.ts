@@ -26,7 +26,7 @@ export class ProjectsListComponent implements OnInit {
     this.projectsListService.getUserRepos('Reekani')
       .subscribe(projectsListJson => {
         this.projectsList = projectsListJson;
-        console.log('this.projectsList', this.projectsList);
+        console.log('this.projects', this.projectsList);
       })
   }
 
