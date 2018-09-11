@@ -10,6 +10,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {StoreModule} from "@ngrx/store";
+import {reducers} from "./reducers";
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatExpansionModule,
     MatIconModule,
     MatFormFieldModule,
-    MatTooltipModule
+    MatTooltipModule,
+    StoreModule.forFeature('projectsList', reducers),
   ],
   providers: [ProjectListService],
   declarations: [ProjectsListComponent],

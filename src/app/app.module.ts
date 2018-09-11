@@ -9,6 +9,10 @@ import {ProjectsListModule} from "./projects-list/projects-list.module";
 import {ProjectsListComponent} from "./projects-list/projects-list/projects-list.component";
 import {AddProjectModule} from "./add-project/add-project.module";
 import {AddProjectComponent} from "./add-project/add-project/add-project.component";
+import {StoreModule} from "@ngrx/store";
+import {metaReducers, reducers} from "./reducers";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {EffectsModule} from "@ngrx/effects";
 
 
 const appRoutes: Routes = [
@@ -24,13 +28,17 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    StoreModule.forRoot(reducers, {metaReducers}),
+    StoreDevtoolsModule.instrument({
+      name: 'NgRx code-memo Store DevTools',
+    }),
+    EffectsModule.forRoot([]),
     ProjectsListModule,
-    AddProjectModule
+    AddProjectModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }
-
