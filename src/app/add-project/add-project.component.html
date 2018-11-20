@@ -1,0 +1,35 @@
+<div class="row mt-5">
+  <div class="col-sm">
+    <mat-card class="add-project-card">
+      <mat-card-header>
+        <mat-card-title class="title">Add project</mat-card-title>
+      </mat-card-header>
+      <form class="add-project-form">
+        <mat-card-content class="ml-2 mr-2">
+          <mat-form-field class="add-project-input">
+            <input matInput
+                   [formControl]="nameFormControl"
+                   placeholder="Project name">
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+              Project name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="add-project-input">
+            <input type="url" matInput placeholder="Github url">
+          </mat-form-field>
+          <mat-form-field class="add-project-input">
+            <textarea matInput placeholder="Description"></textarea>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions class="mr-2">
+          <button mat-raised-button
+                  color="primary"
+                  class="float-right"
+                  [disabled]="buttonDisabled"
+                  (click)="addProject($event)">Add
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>

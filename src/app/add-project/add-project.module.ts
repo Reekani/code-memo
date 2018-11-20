@@ -1,14 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {AddProjectComponent} from './add-project/add-project.component';
+import {AddProjectComponent} from './add-project.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule, MatInputModule} from "@angular/material";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MatCardModule
-  ],
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
+],
   declarations: [AddProjectComponent]
 })
 export class AddProjectModule {
